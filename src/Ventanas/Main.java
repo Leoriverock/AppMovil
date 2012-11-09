@@ -21,6 +21,7 @@ public class Main extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         Ibet = new javax.swing.JLabel();
         usuario = new javax.swing.JTextField();
@@ -40,9 +41,18 @@ public class Main extends javax.swing.JFrame {
 
         usuario.setToolTipText("Ingrese Usuario");
         usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, password, org.jdesktop.beansbinding.ObjectProperty.create(), usuario, org.jdesktop.beansbinding.BeanProperty.create("nextFocusableComponent"));
+        bindingGroup.addBinding(binding);
+
         usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioActionPerformed(evt);
+            }
+        });
+        usuario.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usuarioFocusLost(evt);
             }
         });
 
@@ -57,6 +67,12 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javaicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Java.png"))); // NOI18N
+
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFocusLost(evt);
+            }
+        });
 
         error1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         error1.setForeground(new java.awt.Color(255, 0, 51));
@@ -106,6 +122,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,6 +153,20 @@ public class Main extends javax.swing.JFrame {
             
         } 
     }//GEN-LAST:event_iniciarActionPerformed
+
+    private void usuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFocusLost
+        // TODO add your handling code here:
+        if(!usuario.getText().equals("admin")){
+        error1.setText("Usuario no existe");
+        }
+    }//GEN-LAST:event_usuarioFocusLost
+
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
+        // TODO add your handling code here:
+        if(!password.getText().equals("admin")){
+        error1.setText("password no coincide");
+        }
+    }//GEN-LAST:event_passwordFocusLost
         
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -175,5 +207,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel javaicon;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField usuario;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
