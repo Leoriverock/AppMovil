@@ -128,7 +128,7 @@ public class Main extends javax.swing.JFrame {
         error1.setText("password no coincide");
         }
         else if (usuario.getText().equals("admin") && password.getText().equals("admin")){
-            Principal p = new Principal(this, true);
+            Principal p = new Principal(this, true, usuario.getText());
             p.setLocationRelativeTo(null);
             this.dispose();
             p.setVisible(true);

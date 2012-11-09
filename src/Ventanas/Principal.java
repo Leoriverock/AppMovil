@@ -4,9 +4,11 @@ package Ventanas;
 import Ventanas.*;
 
 public class Principal extends javax.swing.JDialog {
-    public Principal(java.awt.Frame parent, boolean modal) {
+    public Principal(java.awt.Frame parent, boolean modal, String name) {
         super(parent, modal);
         initComponents();
+        String username = name;
+        user.setText(username);
    }
 
    
@@ -70,21 +72,7 @@ public class Principal extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_quitActionPerformed
 
-    public static void main(String args[]) {
-       
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Principal dialog = new Principal(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                       System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Bienvenido;
     private javax.swing.JMenu jMenu1;
