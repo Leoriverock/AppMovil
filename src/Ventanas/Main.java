@@ -3,11 +3,11 @@ package Ventanas;
 
 import javax.swing.ImageIcon;
 import Ventanas.*;
-import Clases.*;
+import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
     
-    registro activo = new registro();
+ 
     public Main() {
         initComponents();
         this.setLocationRelativeTo(this);
@@ -28,6 +28,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         javaicon = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
+        error1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -57,6 +58,10 @@ public class Main extends javax.swing.JFrame {
 
         javaicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Java.png"))); // NOI18N
 
+        error1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        error1.setForeground(new java.awt.Color(255, 0, 51));
+        error1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,13 +81,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(password)
                     .addComponent(usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                    .addComponent(iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE))
+                    .addComponent(iniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                    .addComponent(error1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(Ibet, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,11 +97,13 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
+                        .addGap(18, 18, 18)
+                        .addComponent(error1)
+                        .addGap(21, 21, 21)
                         .addComponent(iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69)
                         .addComponent(jLabel1)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,18 +115,27 @@ public class Main extends javax.swing.JFrame {
 
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         // TODO add your handling code here:
-        if (usuario.getText().equals("admin") && password.getText().equals("admin")){
+        if(usuario.getText().equals("")){
+        error1.setText("Usuario vacio");
+        }
+        else if(password.getText().equals("")){
+        error1.setText("Password vacio");
+        }
+        else if(!usuario.getText().equals("admin")){
+        error1.setText("Usuario no existe");
+        }
+        else if(!password.getText().equals("admin")){
+        error1.setText("password no coincide");
+        }
+        else if (usuario.getText().equals("admin") && password.getText().equals("admin")){
             Principal p = new Principal(this, true);
             p.setLocationRelativeTo(null);
-            activo.setUsername(usuario.getText());
-            System.out.print(activo.getUsername());
             this.dispose();
             p.setVisible(true);
             
         } 
     }//GEN-LAST:event_iniciarActionPerformed
-
-    
+        
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -152,6 +169,7 @@ public class Main extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Ibet;
+    private javax.swing.JLabel error1;
     private javax.swing.JToggleButton iniciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel javaicon;
