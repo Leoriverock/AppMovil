@@ -8,6 +8,12 @@ public class Principal extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         volver.setVisible(false);
+        visa.setVisible(false);
+        master.setVisible(false);
+        paypal.setVisible(false);
+        confirmar.setVisible(false);
+        saldo.setVisible(false);
+        texto.setVisible(false);
         String username = name;
         user.setText(username);
    } 
@@ -27,6 +33,12 @@ public class Principal extends javax.swing.JDialog {
         label_apuesta = new javax.swing.JLabel();
         label_usuario = new javax.swing.JLabel();
         volver = new javax.swing.JButton();
+        paypal = new javax.swing.JLabel();
+        master = new javax.swing.JLabel();
+        visa = new javax.swing.JLabel();
+        texto = new javax.swing.JLabel();
+        saldo = new javax.swing.JTextField();
+        confirmar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -94,6 +106,18 @@ public class Principal extends javax.swing.JDialog {
             }
         });
 
+        paypal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pay.png"))); // NOI18N
+
+        master.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/visa.png"))); // NOI18N
+
+        visa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/master.png"))); // NOI18N
+
+        texto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        texto.setText("Ingresar Saldo en Monedero u$s");
+
+        confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/money.png"))); // NOI18N
+        confirmar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,6 +142,23 @@ public class Principal extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(label_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(76, 76, 76))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(46, 46, 46)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(visa, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(master, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(saldo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(paypal, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addContainerGap(46, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,6 +185,22 @@ public class Principal extends javax.swing.JDialog {
                         .addGap(22, 22, 22)
                         .addComponent(label_penca)))
                 .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(texto)
+                    .addGap(23, 23, 23)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(saldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(paypal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(master, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(visa, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(38, 38, 38)))
         );
 
         penca.getAccessibleContext().setAccessibleParent(this);
@@ -223,6 +280,12 @@ public class Principal extends javax.swing.JDialog {
         penca.setVisible(false);
         label_penca.setVisible(false);
         volver.setVisible(true);
+        visa.setVisible(true);
+        master.setVisible(true);
+        paypal.setVisible(true);
+        confirmar.setVisible(true);
+        saldo.setVisible(true);
+        texto.setVisible(true);
     }//GEN-LAST:event_usuarioActionPerformed
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
@@ -234,6 +297,12 @@ public class Principal extends javax.swing.JDialog {
         penca.setVisible(true);
         label_penca.setVisible(true);
         volver.setVisible(false);
+        visa.setVisible(false);
+        master.setVisible(false);
+        paypal.setVisible(false);
+        confirmar.setVisible(false);
+        saldo.setVisible(false);
+        texto.setVisible(false);
     }//GEN-LAST:event_volverActionPerformed
 
     private void apuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apuestaActionPerformed
@@ -262,6 +331,7 @@ public class Principal extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Bienvenido;
     private javax.swing.JToggleButton apuesta;
+    private javax.swing.JButton confirmar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -272,11 +342,16 @@ public class Principal extends javax.swing.JDialog {
     private javax.swing.JLabel label_apuesta;
     private javax.swing.JLabel label_penca;
     private javax.swing.JLabel label_usuario;
+    private javax.swing.JLabel master;
     private javax.swing.JLabel panel;
+    private javax.swing.JLabel paypal;
     private javax.swing.JToggleButton penca;
     private javax.swing.JMenuItem quit;
+    private javax.swing.JTextField saldo;
+    private javax.swing.JLabel texto;
     private javax.swing.JMenu user;
     private javax.swing.JToggleButton usuario;
+    private javax.swing.JLabel visa;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
