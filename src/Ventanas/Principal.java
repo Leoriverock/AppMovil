@@ -184,7 +184,7 @@ public class Principal extends javax.swing.JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(label_penca)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(37, 37, 37)
@@ -254,7 +254,7 @@ public class Principal extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -302,6 +302,7 @@ public class Principal extends javax.swing.JDialog {
         paypal.setVisible(false);
         confirmar.setVisible(false);
         saldo.setVisible(false);
+        panel.setVisible(true);
         texto.setVisible(false);
     }//GEN-LAST:event_volverActionPerformed
 
@@ -314,6 +315,25 @@ public class Principal extends javax.swing.JDialog {
         penca.setVisible(false);
         label_penca.setVisible(false);
         volver.setVisible(true);
+        panel.setVisible(false);
+       /* label_apostar.setVisible(true);
+        APartidos.setVisible(true);
+        a   _partidos.setVisible(true);
+        ResExacto.setVisible(true);
+        label_resultado.setVisible(true);
+        ACampeon.setVisible(true);
+        a_campeon.setVisible(true);
+        AGoleador.setVisible(true);
+        a_goleador.setVisible(true);
+        linea.setVisible(true);
+        cambia.setVisible(false);
+        lista_partidos.setVisible(false);
+        competicion.setVisible(false);
+        fecha.setVisible(false);
+        local.setVisible(false);
+        visitante.setVisible(false);
+        vs.setVisible(false);
+                */
     }//GEN-LAST:event_apuestaActionPerformed
 
     private void pencaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pencaActionPerformed

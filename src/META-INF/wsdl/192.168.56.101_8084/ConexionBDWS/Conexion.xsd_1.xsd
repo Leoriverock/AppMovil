@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://Servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Servicio/">
+
+<xs:element name="Conect" type="tns:Conect" />
+
+<xs:element name="ConectResponse" type="tns:ConectResponse" />
+
+<xs:element name="Obtener" type="tns:Obtener" />
+
+<xs:element name="ObtenerCompeticiones" type="tns:ObtenerCompeticiones" />
+
+<xs:element name="ObtenerCompeticionesResponse" type="tns:ObtenerCompeticionesResponse" />
+
+<xs:element name="ObtenerEquipos" type="tns:ObtenerEquipos" />
+
+<xs:element name="ObtenerEquiposResponse" type="tns:ObtenerEquiposResponse" />
+
+<xs:element name="ObtenerGolesJugador" type="tns:ObtenerGolesJugador" />
+
+<xs:element name="ObtenerGolesJugadorResponse" type="tns:ObtenerGolesJugadorResponse" />
+
+<xs:element name="ObtenerJugadorEquipo" type="tns:ObtenerJugadorEquipo" />
+
+<xs:element name="ObtenerJugadorEquipoResponse" type="tns:ObtenerJugadorEquipoResponse" />
+
+<xs:element name="ObtenerJugadores" type="tns:ObtenerJugadores" />
+
+<xs:element name="ObtenerJugadoresResponse" type="tns:ObtenerJugadoresResponse" />
+
+<xs:element name="ObtenerLigaEquipo" type="tns:ObtenerLigaEquipo" />
+
+<xs:element name="ObtenerLigaEquipoResponse" type="tns:ObtenerLigaEquipoResponse" />
+
+<xs:element name="ObtenerResponse" type="tns:ObtenerResponse" />
+
+<xs:element name="Sql3" type="tns:Sql3" />
+
+<xs:element name="Sql3Response" type="tns:Sql3Response" />
+
+<xs:element name="login" type="tns:login" />
+
+<xs:element name="loginResponse" type="tns:loginResponse" />
+
+<xs:complexType name="ObtenerLigaEquipo">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerLigaEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Conect">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ConectResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Obtener">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Sql3">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="Sql3Response">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ObtenerGolesJugador">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerGolesJugadorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ObtenerJugadorEquipo">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerJugadorEquipoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ObtenerCompeticiones">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerCompeticionesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ObtenerJugadores">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerJugadoresResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ObtenerEquipos">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ObtenerEquiposResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0" />
+<xs:element name="password" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

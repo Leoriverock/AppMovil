@@ -1,6 +1,7 @@
 
 package Ventanas;
 
+import Clases.Actualizacion;
 import javax.swing.ImageIcon;
 import Ventanas.*;
 import javax.swing.JOptionPane;
@@ -11,6 +12,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(this);
+        //Actualizacion instancia = new Actualizacion();
+       // instancia.actualizacion();
         
     }
 
@@ -45,17 +48,6 @@ public class Main extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, password, org.jdesktop.beansbinding.ObjectProperty.create(), usuario, org.jdesktop.beansbinding.BeanProperty.create("nextFocusableComponent"));
         bindingGroup.addBinding(binding);
 
-        usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usuarioActionPerformed(evt);
-            }
-        });
-        usuario.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                usuarioFocusLost(evt);
-            }
-        });
-
         iniciar.setText("Iniciar sesion");
         iniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,12 +59,6 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javaicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Java.png"))); // NOI18N
-
-        password.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordFocusLost(evt);
-            }
-        });
 
         error1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         error1.setForeground(new java.awt.Color(255, 0, 51));
@@ -127,73 +113,19 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioActionPerformed
-
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         // TODO add your handling code here:
-        if(usuario.getText().equals("")){
-        error1.setText("Usuario vacio");
+        if(Main.login(usuario.getText(), password.getText())!=true){
+        error1.setText("El usuario o password es incorrecto");
         }
-        else if(password.getText().equals("")){
-        error1.setText("Password vacio");
-        }
-        else if(!usuario.getText().equals("admin")){
-        error1.setText("Usuario no existe");
-        }
-        else if(!password.getText().equals("admin")){
-        error1.setText("password no coincide");
-        }
-        else if (usuario.getText().equals("admin") && password.getText().equals("admin")){
-            Principal p = new Principal(this, true, usuario.getText());
+        else {Principal p = new Principal(this, true, usuario.getText());
             p.setLocationRelativeTo(null);
             this.dispose();
-            p.setVisible(true);
-            
-        } 
+            p.setVisible(true);}
     }//GEN-LAST:event_iniciarActionPerformed
-
-    private void usuarioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioFocusLost
-        // TODO add your handling code here:
-        if(!usuario.getText().equals("admin")){
-        error1.setText("Usuario no existe");
-        }
-    }//GEN-LAST:event_usuarioFocusLost
-
-    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
-        // TODO add your handling code here:
-        if(!password.getText().equals("admin")){
-        error1.setText("password no coincide");
-        }
-    }//GEN-LAST:event_passwordFocusLost
         
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+                java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
             }
@@ -209,4 +141,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField usuario;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
+
+    private static boolean login(java.lang.String usuario, java.lang.String password) {
+        WebService.Conexion_Service service = new WebService.Conexion_Service();
+        WebService.Conexion port = service.getConexionPort();
+        return port.login(usuario, password);
+    }
 }
