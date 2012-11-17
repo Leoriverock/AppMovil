@@ -12,8 +12,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(this);
-        //Actualizacion instancia = new Actualizacion();
-       // instancia.actualizacion();
+        Actualizacion instancia = new Actualizacion();
+        instancia.actualizacion();
         
     }
 
