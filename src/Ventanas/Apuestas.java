@@ -54,6 +54,7 @@ public class Apuestas extends javax.swing.JDialog {
         Confirmar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         detalle_jugador = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -163,6 +164,14 @@ public class Apuestas extends javax.swing.JDialog {
         detalle_jugador.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
         detalle_jugador.setText("Detalles Jugador");
 
+        volver.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        volver.setText("Volver");
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -199,10 +208,11 @@ public class Apuestas extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(APartidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ACampeon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -210,9 +220,9 @@ public class Apuestas extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(AGoleador, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                             .addComponent(ResExacto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jSeparator1)
-                    .addComponent(label_apostar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(label_apostar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lista_competicion, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
                             .addComponent(lista_partidos, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
@@ -241,15 +251,15 @@ public class Apuestas extends javax.swing.JDialog {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(detalle_jugador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)))
+                        .addComponent(volver)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addComponent(volver)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label_apostar, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -284,7 +294,7 @@ public class Apuestas extends javax.swing.JDialog {
                         .addComponent(res_local, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(op_1)
                     .addComponent(op_2))
-                .addGap(18, 43, Short.MAX_VALUE)
+                .addGap(18, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Monto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_monto))
@@ -302,12 +312,10 @@ public class Apuestas extends javax.swing.JDialog {
         label_apostar.setText("Apostar a Partidos");
         lista_competicion.setVisible(true);
         lista_jugadores.setVisible(false);
-        lista_competicion.setVisible(true);
         competicion.setVisible(true);
         fecha.setVisible(true);
         local.setVisible(true);
         visitante.setVisible(true);
-        lista_competicion.setVisible(false);
         res_visita.setVisible(false);
         res_local.setVisible(false);
         Confirmar.setVisible(true);
@@ -315,7 +323,8 @@ public class Apuestas extends javax.swing.JDialog {
         label_monto.setVisible(true);
         grupo_radio.add(op_1);
         grupo_radio.add(op_2);
-        
+        op_1.setVisible(true);      
+        op_2.setVisible(true);  
     }//GEN-LAST:event_APartidosActionPerformed
 
     private void ResExactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResExactoActionPerformed
@@ -324,17 +333,17 @@ public class Apuestas extends javax.swing.JDialog {
         label_apostar.setText("Apostar a Resultado Exacto");
         lista_competicion.setVisible(true);
         lista_jugadores.setVisible(false);
-        lista_competicion.setVisible(true);
         competicion.setVisible(true);
         fecha.setVisible(true);
         local.setVisible(true);
         visitante.setVisible(true);
-        lista_competicion.setVisible(false);
         res_visita.setVisible(true);
         res_local.setVisible(true);
         Confirmar.setVisible(true);
          Monto.setVisible(true);
         label_monto.setVisible(true);
+        op_1.setVisible(false);      
+        op_2.setVisible(false);  
     }//GEN-LAST:event_ResExactoActionPerformed
 
     private void quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitActionPerformed
@@ -352,16 +361,18 @@ public class Apuestas extends javax.swing.JDialog {
         label_apostar.setText("Apostar a Campeon");
         lista_jugadores.setVisible(false);
         lista_competicion.setVisible(true);
+        lista_partidos.setVisible(true);
         competicion.setVisible(true);
         fecha.setVisible(true);
         local.setVisible(true);
-        visitante.setVisible(true);
-        lista_competicion.setVisible(true);
+        visitante.setVisible(false);
         res_visita.setVisible(false);
         res_local.setVisible(false);
         Confirmar.setVisible(true);
          Monto.setVisible(true);
         label_monto.setVisible(true);
+        op_1.setVisible(false);      
+        op_2.setVisible(false);
     }//GEN-LAST:event_ACampeonActionPerformed
 
     private void AGoleadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AGoleadorActionPerformed
@@ -369,19 +380,46 @@ public class Apuestas extends javax.swing.JDialog {
         label_apostar.setVisible(true);
         label_apostar.setText("Apostar a Goleador");
         lista_competicion.setVisible(true);
+        lista_partidos.setVisible(true);
         lista_jugadores.setVisible(false);
-        lista_competicion.setVisible(true);
         competicion.setVisible(true);
         fecha.setVisible(true);
-        local.setVisible(true);
-        visitante.setVisible(true);
-        lista_competicion.setVisible(false);
+        local.setVisible(false);
+        visitante.setVisible(false);
+        lista_jugadores.setVisible(false);
         res_visita.setVisible(false);
         res_local.setVisible(false);
         Confirmar.setVisible(true);
          Monto.setVisible(true);
         label_monto.setVisible(true);
+        op_1.setVisible(false);      
+        op_2.setVisible(false);
     }//GEN-LAST:event_AGoleadorActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Principal nueva = new Principal(null, true, "");
+        nueva.setVisible(true);
+        //nueva.setLocationRelativeTo(null);
+        nueva.setLocation(200, 300);
+        /*  usuario.setVisible(true);
+        label_usuario.setVisible(true);
+        apuesta.setVisible(true);
+        label_apuesta.setVisible(true);
+        penca.setVisible(true);
+        label_penca.setVisible(true);
+        volver.setVisible(false);
+        visa.setVisible(false);
+        master.setVisible(false);
+        paypal.setVisible(false);
+        debitar.setVisible(false);
+        acreditar.setVisible(false);
+        Cash.setVisible(false);
+        saldo.setVisible(false);
+        panel.setVisible(true);
+        texto.setVisible(false);*/
+    }//GEN-LAST:event_volverActionPerformed
 
    
    
@@ -429,6 +467,7 @@ public class Apuestas extends javax.swing.JDialog {
     private javax.swing.JTextField res_visita;
     private javax.swing.JMenu user;
     private javax.swing.JLabel visitante;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
 

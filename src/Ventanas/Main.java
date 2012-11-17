@@ -15,6 +15,7 @@ public class Main extends javax.swing.JFrame {
         Actualizacion instancia = new Actualizacion();
         instancia.actualizacion();
         
+        
     }
 
     Main(Principal aThis, boolean b) {
@@ -42,7 +43,8 @@ public class Main extends javax.swing.JFrame {
 
         Ibet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
 
-        usuario.setToolTipText("Ingrese Usuario");
+        usuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        usuario.setToolTipText("");
         usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, password, org.jdesktop.beansbinding.ObjectProperty.create(), usuario, org.jdesktop.beansbinding.BeanProperty.create("nextFocusableComponent"));
@@ -59,6 +61,8 @@ public class Main extends javax.swing.JFrame {
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javaicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Java.png"))); // NOI18N
+
+        password.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         error1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         error1.setForeground(new java.awt.Color(255, 0, 51));

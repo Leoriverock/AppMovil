@@ -20,6 +20,8 @@ public class Principal extends javax.swing.JDialog {
         debitar.setVisible(false);
         acreditar.setVisible(false);
    } 
+
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -330,10 +332,11 @@ public class Principal extends javax.swing.JDialog {
 
     private void apuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apuestaActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         Apuestas p = new Apuestas(null, true);
         p.setVisible(true);
         p.setLocationRelativeTo(null);
-        usuario.setVisible(false);
+        /* usuario.setVisible(false);
         label_usuario.setVisible(false);
         apuesta.setVisible(false);
         label_apuesta.setVisible(false);
@@ -342,7 +345,7 @@ public class Principal extends javax.swing.JDialog {
         volver.setVisible(true);
         panel.setVisible(false);
         
-       /* label_apostar.setVisible(true);
+        label_apostar.setVisible(true);
         APartidos.setVisible(true);
         a   _partidos.setVisible(true);
         ResExacto.setVisible(true);
