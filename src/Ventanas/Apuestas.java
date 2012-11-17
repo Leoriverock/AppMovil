@@ -8,7 +8,7 @@ public class Apuestas extends javax.swing.JDialog {
     public Apuestas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        lista_competicion.setVisible(false);
+        lista_partidos.setVisible(false);
         competicion.setVisible(false);
         fecha.setVisible(false);
         local.setVisible(false);
@@ -21,6 +21,8 @@ public class Apuestas extends javax.swing.JDialog {
         label_monto.setVisible(false);
         lista_jugadores.setVisible(false);
         detalle_jugador.setVisible(false);
+        op_1.setVisible(false);
+        op_2.setVisible(false);
     }
 
   
