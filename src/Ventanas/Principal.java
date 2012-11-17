@@ -333,7 +333,7 @@ public class Principal extends javax.swing.JDialog {
     private void apuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apuestaActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Apuestas p = new Apuestas(null, true);
+        Apuestas p = new Apuestas(null, true, user.getText());
         p.setVisible(true);
         p.setLocationRelativeTo(null);
         /* usuario.setVisible(false);

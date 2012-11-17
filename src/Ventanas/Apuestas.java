@@ -5,9 +5,11 @@ package Ventanas;
 public class Apuestas extends javax.swing.JDialog {
 
     
-    public Apuestas(java.awt.Frame parent, boolean modal) {
+    public Apuestas(java.awt.Frame parent, boolean modal, String name) {
         super(parent, modal);
         initComponents();
+        String username = name;
+        user.setText(username);
         lista_partidos.setVisible(false);
         competicion.setVisible(false);
         fecha.setVisible(false);
@@ -399,10 +401,10 @@ public class Apuestas extends javax.swing.JDialog {
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Principal nueva = new Principal(null, true, "");
+        Principal nueva = new Principal(null, true, user.getText());
         nueva.setVisible(true);
-        //nueva.setLocationRelativeTo(null);
-        nueva.setLocation(200, 300);
+        nueva.setLocationRelativeTo(null);
+        //nueva.setLocation(200, 300);
         /*  usuario.setVisible(true);
         label_usuario.setVisible(true);
         apuesta.setVisible(true);
@@ -423,21 +425,7 @@ public class Apuestas extends javax.swing.JDialog {
 
    
    
-    public static void main(String args[]) {
-       
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Apuestas dialog = new Apuestas (new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ACampeon;
     private javax.swing.JButton AGoleador;
