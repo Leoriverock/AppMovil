@@ -27,101 +27,21 @@ public class Pruebas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        texto = new javax.swing.JLabel();
-        paypal = new javax.swing.JLabel();
-        confirmar = new javax.swing.JButton();
-        visa = new javax.swing.JLabel();
-        saldo = new javax.swing.JTextField();
-        master = new javax.swing.JLabel();
-        confirmar1 = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        Cash = new javax.swing.JLabel();
+        grupo = new javax.swing.ButtonGroup();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        texto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        texto.setText("Ingresar Saldo en Monedero u$s");
-
-        paypal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pay.png"))); // NOI18N
-        paypal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        confirmar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        confirmar.setText("Debitar");
-        confirmar.setToolTipText("");
-        confirmar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        confirmar.setMaximumSize(new java.awt.Dimension(50, 20));
-        confirmar.setMinimumSize(new java.awt.Dimension(50, 20));
-
-        visa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/master.png"))); // NOI18N
-        visa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        saldo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        saldo.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        saldo.setText("0");
-        saldo.setToolTipText("");
-
-        master.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/visa.png"))); // NOI18N
-        master.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        confirmar1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        confirmar1.setText("Acreditar");
-        confirmar1.setToolTipText("");
-        confirmar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        confirmar1.setMaximumSize(new java.awt.Dimension(50, 20));
-        confirmar1.setMinimumSize(new java.awt.Dimension(50, 20));
-        confirmar1.setPreferredSize(new java.awt.Dimension(50, 20));
-
-        Cash.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Cash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Cash.setText("u$s");
+        setAlwaysOnTop(true);
+        setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSeparator1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(visa, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(master, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(3, 3, 3)
-                            .addComponent(paypal, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(confirmar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Cash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saldo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(texto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(saldo, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                    .addComponent(Cash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(confirmar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(paypal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(master, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(visa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+            .addGap(0, 321, Short.MAX_VALUE)
         );
 
         pack();
@@ -169,14 +89,6 @@ public class Pruebas extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Cash;
-    private javax.swing.JButton confirmar;
-    private javax.swing.JButton confirmar1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel master;
-    private javax.swing.JLabel paypal;
-    private javax.swing.JTextField saldo;
-    private javax.swing.JLabel texto;
-    private javax.swing.JLabel visa;
+    private javax.swing.ButtonGroup grupo;
     // End of variables declaration//GEN-END:variables
 }

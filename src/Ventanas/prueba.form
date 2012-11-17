@@ -118,6 +118,10 @@
         </Menu>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupo_radio">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -195,12 +199,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="imagen" alignment="1" max="32767" attributes="0"/>
+          <Component id="imagen" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="imagen" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="imagen" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -210,11 +217,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                  <Component id="cambia" min="-2" pref="149" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -223,12 +225,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                   <Component id="a_partidos" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ACampeon" min="-2" pref="46" max="-2" attributes="0"/>
                                   <Component id="APartidos" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                                  <Component id="a_campeon" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="ACampeon" min="-2" pref="46" max="-2" attributes="0"/>
+                                      <Component id="a_campeon" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
@@ -245,31 +249,41 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="label_monto" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="Monto" min="-2" pref="116" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="lista_partidos" min="-2" pref="221" max="-2" attributes="0"/>
-                          <Component id="competicion" min="-2" pref="173" max="-2" attributes="0"/>
-                          <Component id="fecha" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="visitante" max="32767" attributes="0"/>
-                                  <Component id="local" min="-2" pref="196" max="-2" attributes="0"/>
+                      <Component id="lista_jugadores" min="-2" pref="221" max="-2" attributes="0"/>
+                      <Component id="lista_partidos" min="-2" pref="221" max="-2" attributes="0"/>
+                      <Component id="lista_competicion" min="-2" pref="221" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="label_monto" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="Monto" min="-2" pref="116" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="res_local" min="-2" max="-2" attributes="0"/>
-                                  <Component id="res_visita" min="-2" max="-2" attributes="0"/>
+                              <Component id="competicion" min="-2" pref="173" max="-2" attributes="0"/>
+                              <Component id="fecha" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="local" max="32767" attributes="0"/>
+                                      <Component id="visitante" pref="140" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="op_2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="op_1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="res_local" min="-2" max="-2" attributes="0"/>
+                                      <Component id="res_visita" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="detalle_jugador" min="-2" pref="43" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="Confirmar" min="-2" pref="153" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="lista_competicion" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="Confirmar" min="-2" pref="153" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       </Group>
                       <Component id="linea" min="-2" pref="218" max="-2" attributes="0"/>
                   </Group>
@@ -292,7 +306,7 @@
                       <Component id="a_partidos" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="label_resultado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ACampeon" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="AGoleador" alignment="3" min="-2" pref="52" max="-2" attributes="0"/>
@@ -302,35 +316,47 @@
                       <Component id="a_campeon" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="a_goleador" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="9" max="32767" attributes="0"/>
                   <Component id="linea" min="-2" pref="11" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="cambia" min="-2" pref="12" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lista_competicion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lista_partidos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lista_jugadores" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="9" max="32767" attributes="0"/>
                   <Component id="competicion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="fecha" min="-2" pref="15" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="res_local" max="32767" attributes="0"/>
-                      <Component id="local" min="-2" pref="20" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="local" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="res_local" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="visitante" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="res_visita" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="op_1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="op_2" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="res_visita" min="-2" max="-2" attributes="0"/>
-                      <Component id="visitante" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Monto" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="label_monto" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="label_monto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Monto" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="Confirmar" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Confirmar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="detalle_jugador" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -416,6 +442,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AGoleadorActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="APartidos">
           <Properties>
@@ -439,14 +468,6 @@
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Res. Exacto"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="cambia">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="Monto">
@@ -568,6 +589,32 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Monto $$$"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="lista_jugadores">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Juan Manuel Olivera"/>
+                <StringItem index="1" value="Lolo Stoyanoff"/>
+                <StringItem index="2" value="Ale Gonzalez"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="detalle_jugador">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="J!"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="op_2">
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="op_1">
         </Component>
       </SubComponents>
     </Container>
